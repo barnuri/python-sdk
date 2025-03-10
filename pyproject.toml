@@ -30,6 +30,7 @@ dependencies = [
     "sse-starlette>=1.6.1",
     "pydantic-settings>=2.5.2",
     "uvicorn>=0.23.1",
+    "python-multipart",
 ]
 
 [project.optional-dependencies]
@@ -71,9 +72,6 @@ strict = [
     "src/mcp/server/fastmcp/tools/base.py",
 ]
 
-[tool.pytest.ini_options]
-markers = ["anyio"]
-
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 ignore = []
@@ -93,6 +91,7 @@ members = ["examples/servers/*"]
 mcp = { workspace = true }
 
 [tool.pytest.ini_options]
+markers = ["anyio"]
 xfail_strict = true
 filterwarnings = [
     "error",
